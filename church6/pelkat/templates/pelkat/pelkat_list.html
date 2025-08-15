@@ -1,0 +1,24 @@
+<div class="content-lg container">
+    
+    <div class="row margin-b-50">
+        {% for pelkat in pelkats %}
+            <div class="col-sm-4 sm-margin-b-50">
+                <div class="margin-b-20">
+                    <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".{{ forloop.counter0 }}s" style="width:200px; height:200px; overflow:hidden; margin:0 auto; border-radius:8px;">
+                        <img class="img-responsive" src="{{ pelkat.logo.url }}" alt="{{ pelkat.name }}" style="width:100%; height:100%; object-fit:contain; object-position:center;">
+                    </div>
+                </div>
+                <h4>
+                    <a href="{% url 'pelkat-detail' slug=pelkat.slug %}">{{ pelkat.name }}</a>
+                </h4>
+                <p>{{ pelkat.description|truncatewords:20|safe}}</p>
+                <a class="link" href="{% url 'pelkat-detail' slug=pelkat.slug %}">Selengkapnya</a>
+            </div>
+        {% empty %}
+            <div class="col-sm-12">
+                <p>Tidak ada data Pelayanan Kategorial saat ini.</p>
+            </div>
+        {% endfor %}
+    </div>
+    
+</div>

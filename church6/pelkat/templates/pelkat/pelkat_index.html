@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Pelkat{% endblock title %}
+{% block hero_title %}Pelayanan Kategorial{% endblock hero_title %}
+{% block hero_desc %}Pelayanan kategorial GPIB adalah pelayanan yang dilakukan oleh GPIB (Gereja Protestan di Indonesia bagian Barat) kepada jemaatnya berdasarkan kategori usia dan jenis kelamin. Pelayanan ini bertujuan untuk membina dan melayani warga GPIB dalam kelompok-kelompok khusus, seperti anak-anak, remaja, pemuda, kaum bapak, kaum ibu, dan lansia, dengan pendekatan yang disesuaikan dengan kebutuhan masing-masing kelompok. 
+{% endblock hero_desc %}
+{% block content %}
+
+        <!--========== PAGE LAYOUT ==========-->
+        {% include 'pelkat/pelkat_list.html' %}
+
+        <!-- Clients -->
+        <div class="bg-color-sky-light">
+            <div class="content-lg container">
+                <!-- Swiper Clients -->
+                <div class="swiper-slider swiper-clients">
+                    <!-- Swiper Wrapper -->
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img class="swiper-clients-img" src="{% static 'img/clients/01.png' %}" alt="Clients Logo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="swiper-clients-img" src="{% static 'img/clients/02.png' %}" alt="Clients Logo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="swiper-clients-img" src="{% static 'img/clients/03.png' %}" alt="Clients Logo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="swiper-clients-img" src="{% static 'img/clients/04.png' %}" alt="Clients Logo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="swiper-clients-img" src="{% static 'img/clients/05.png' %}" alt="Clients Logo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="swiper-clients-img" src="{% static 'img/clients/06.png' %}" alt="Clients Logo">
+                        </div>
+                    </div>
+                    <!-- End Swiper Wrapper -->
+                </div>
+                <!-- End Swiper Clients -->
+            </div>
+        </div>
+        <!-- End Clients -->
+
+        <!-- Promo Section -->
+        <div class="promo-section overflow-h">
+            <div class="container">
+                <div class="clearfix">
+                    <div class="ver-center">
+                        <div class="ver-center-aligned">
+                            <div class="promo-section-col">
+                                <h2>Our Clients</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua enim minim veniam exercitation ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua enim minim veniam exercitation</p>
+                                <p>Ipsum dolor sit amet consectetur adipiscing elit sed tempor incididut ut sead laboret dolore magna aliqua enim minim veniam exercitation ipsum dolor sit amet consectetur adipiscing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="promo-section-img-right">
+                <img class="img-responsive" src="{% static 'img/970x970/01.jpg' %}" alt="Content Image">
+            </div>
+        </div>
+        <!-- End Promo Section -->
+        <!--========== END PAGE LAYOUT ==========-->
+
+{% endblock content %}

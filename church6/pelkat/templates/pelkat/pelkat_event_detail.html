@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ pelkat.slug }}{% endblock title %}
+{% block hero_banner %}{{ pelkat.banner.url }}{% endblock hero_banner %}
+{% block hero_title %}Kegiatan Pelkat PKB{% endblock hero_title %}
+{% block hero_desc %}{% endblock hero_desc %}
+{% block content %}
+    <!--========== PAGE LAYOUT ==========-->
+    <div class="content-lg container">
+        <!-- Event Title & Deskripsi -->
+        <div class="row margin-b-40">
+            <div class="col-sm-12">
+                <h2>{{ event.title }}</h2>
+                <p class="lead text-muted">
+                    <strong>Tanggal:</strong> {{ event.date|date:"j F Y" }}{% if event.location %} | <strong>Lokasi:</strong> {{ event.location }}{% endif %}
+                </p>
+            </div>
+        </div>
+        <!--// end row -->
+
+        <!-- Gambar Utama & Deskripsi Lengkap -->
+        <div class="row margin-b-50">
+            {% if event.image %}
+            <div class="col-md-6">
+                <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
+                    <img class="img-responsive" src="{{ event.image.url }}" alt="{{ event.title }}">
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="col-md-6">
+                <h3>Deskripsi Kegiatan</h3>
+                <div>
+                    {{ event.description|safe }}
+                </div>
+            </div>
+        </div>
+        <!--// end row -->
+
+        <!-- Galeri Foto Kegiatan -->
+        {% if images %}
+        <div class="row">
+            <div class="col-sm-12">
+                <h4>Dokumentasi Kegiatan</h4>
+            </div>
+
+            {% for img in images %}
+            <div class="col-sm-4 sm-margin-b-50">
+                <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
+                    <img class="img-responsive" src="{{ img.image.url }}" alt="{{ img.caption }}">
+                    {% if img.caption %}
+                    <small class="text-muted d-block mt-2">{{ img.caption }}</small>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <!--// end row -->
+
+        <!-- Tombol Kembali -->
+        <div class="row margin-t-30">
+            <div class="col-sm-12">
+                <a href="{% url 'pelkat-detail' pelkat.slug %}" class="btn btn-secondary">← Kembali ke {{ pelkat.name }}</a>
+            </div>
+        </div>
+    </div>
+    <!--========== END PAGE LAYOUT ==========-->
+{% endblock content %}
